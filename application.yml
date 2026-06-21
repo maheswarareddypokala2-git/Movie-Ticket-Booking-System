@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=Oracle;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: 
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  redis:
+    host: localhost
+    port: 6379
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: movie-booking-group
+      auto-offset-reset: earliest
+
+app:
+  jwt:
+    secret: dGhpcy1pcy1hLXN1cGVyLXNlY3VyZS0yNTYtYml0LXNlY3JldC1rZXktZm9yLWp3dC10b2tlbi1nZW5lcmF0aW9uCg==
+    access-expiration-ms: 900000
+  seat-hold:
+    hold-duration-minutes: 10
